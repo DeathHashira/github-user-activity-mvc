@@ -12,9 +12,15 @@ use Src\Router;
 use eftec\bladeone\BladeOne;
 use Src\Cache;
 
+/**
+ * Create cache and blade
+ */
 $blade = new BladeOne(__DIR__ . "/../views", __DIR__ . "/../cache", BladeOne::MODE_DEBUG);
 $cache = new Cache();
 
+/**
+ * Set routes
+ */
 Router::get('/', function() {
     header("Location: /home");
 });

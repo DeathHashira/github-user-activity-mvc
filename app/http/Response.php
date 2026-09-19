@@ -3,8 +3,10 @@
 namespace App\http;
 
 use CurlHandle;
-use Src\Cache;
 
+/**
+ * Format response receiving from server
+ */
 class Response
 {
     public CurlHandle $ch;
@@ -30,6 +32,11 @@ class Response
         ];
     }
 
+    /**
+     * Set cURL options
+     *
+     * @return void
+     */
     private function setCurlOpt(): void
     {
         curl_setopt($this->ch, CURLOPT_HTTPHEADER, $this->header);

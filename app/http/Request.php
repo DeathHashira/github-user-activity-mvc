@@ -2,6 +2,9 @@
 
 namespace App\http;
 
+/**
+ * Format requests sending to server
+ */
 class Request
 {
     public function __construct(
