@@ -1,0 +1,14 @@
+vendor/
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+temp/
+tmp/
+
+cache/*
+!cache/.gitkeep
+
+data/*
+!data/.gitkeep

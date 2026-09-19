@@ -1,0 +1,22 @@
+{
+    "name": "hashira/beginner-github-user-activity",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DeathHashira",
+            "email": "shabanid.zahra@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "eftec/bladeone": "^4.19",
+        "predis/predis": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/",
+            "App\\": "app/",
+            "Controllers\\": "controllers/"
+        }
+    }
+}
