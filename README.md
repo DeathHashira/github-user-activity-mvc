@@ -25,7 +25,7 @@ sudo docker pull redis
 ```
 Then you can run redis-server in your container (make sure you're in the root directory of the project):
 ```bash
-sudo docker run --rm -v /data:/data -it --name myredis redis redis-server --appendonly yes
+sudo docker run --rm -v ./data:/data -it --name myredis redis redis-server --appendonly yes
 ```
 ## Usage
 This project is only for educational purpose of understanding the simple implementation of MVC (Router included), written in raw PHP.\
