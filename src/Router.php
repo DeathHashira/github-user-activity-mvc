@@ -29,6 +29,11 @@ class Router
         return parse_url($_SERVER["REQUEST_URI"])['path'];
     }
 
+    public static function addNofFoundHandler(callable $func): void
+    {
+        Router::$routes['get']['notfound'] = $func;
+    }
+
     public static function run(): void
     {
         $path = Router::getPath();
@@ -37,6 +42,10 @@ class Router
         $callable = Router::$routes[$method][$path] ?? null;
         if (is_callable($callable)) {
             $callable();
-        };
+        } else if (isset(Router::$routes['get']['notfound'])) {
+            Router::$routes['get']['notfound']();
+        } else {
+            header("HTTP/1.1 404 Not Found");
+        }
     }
 }

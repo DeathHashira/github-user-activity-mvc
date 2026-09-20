@@ -30,6 +30,10 @@ Router::get('/home', function() use ($blade) {
 });
 
 Router::get('/activities', function() use ($blade, $cache) {
+    if (empty($_GET)) {
+        header("Location: /home");exit;
+    }
+
     $request = new Request(
         strtolower($_SERVER["REQUEST_METHOD"]),
         $_SERVER["REQUEST_URI"],
@@ -42,6 +46,10 @@ Router::get('/activities', function() use ($blade, $cache) {
         "events" => $events,
         "username" => $request->query()["username"]
     ]);
+});
+
+Router::addNofFoundHandler(function() use ($blade) {
+    echo $blade->run("notfoundview");
 });
 
 Router::run();
